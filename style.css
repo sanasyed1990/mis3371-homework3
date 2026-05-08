@@ -1,29 +1,48 @@
 body {
-    font-family: Arial;
-    background: #e6eceb;
+    font-family: Arial, sans-serif;
+    background-color: #0a6b5e;
     margin: 0;
+    padding: 0;
+    color: white;
 }
 
 #header {
     background: #0a6b5e;
     color: white;
     padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-     gap: 20px;
-}
 
- {
-    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 #main {
     width: 85%;
+    max-width: 1000px;
+
     margin: 20px auto;
-    background: #f2f2f2;
+
+    background-color: #dcdcdc;
+
     padding: 20px;
+
     border-radius: 10px;
+
+    color: white;
+}
+
+h1,
+h2 {
+    color: white;
+}
+
+table {
+    width: 100%;
 }
 
 td {
@@ -33,14 +52,11 @@ td {
 
 input[type="text"],
 input[type="password"],
-input[type="email"],
-input[type="date"] {
-    width: 180px;
-    padding: 5px;
-}
-
+input[type="date"],
+textarea,
 select {
-    width: 120px;
+    width: 180px;
+    padding: 6px;
 }
 
 textarea {
@@ -48,32 +64,59 @@ textarea {
     height: 80px;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-    width: auto;
-}
-
 button,
 input[type="submit"],
 input[type="reset"] {
-    background: #0a6b5e;
+
+    background-color: #0a6b5e;
+
     color: white;
-    padding: 8px 12px;
+
     border: none;
+
+    padding: 8px 14px;
+
     margin: 5px;
+
     cursor: pointer;
 }
 
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+
+    background-color: #09574d;
+}
+
 .error {
+
     color: red;
+
     font-size: 13px;
+
     display: block;
+
     margin-top: 4px;
 }
 
+iframe {
+
+    border: none;
+
+    margin-top: 20px;
+
+    border-radius: 10px;
+}
+
 #footer {
+
     background: #0a6b5e;
+
     color: white;
+
     text-align: center;
+
     padding: 15px;
+
+    margin-top: 20px;
 }
