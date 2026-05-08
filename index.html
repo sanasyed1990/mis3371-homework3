@@ -21,17 +21,17 @@ href="style.css">
 
 <div id="header">
 
-    <img src="./logo.png"
-    alt="FLH Logo"
-    class="logo">
+<img src="./logo.png"
+alt="FLH Logo"
+class="logo">
 
-    <div class="header-center">
+<div class="header-center">
 
-        <h1>FirstLine Health</h1>
+<h1>FirstLine Health</h1>
 
-        <div id="currentDate"></div>
+<div id="currentDate"></div>
 
-    </div>
+</div>
 
 </div>
 
@@ -47,41 +47,27 @@ id="patientForm">
 <tr>
 
 <td>First Name:</td>
-
 <td>
-
 <input type="text"
 id="firstName"
-oninput="validateFirstName()"
-required>
-
+oninput="validateFirstName()">
 <span class="error"
 id="firstNameError"></span>
-
 </td>
 
 <td>Middle Initial:</td>
-
 <td>
-
 <input type="text"
-id="middleInitial"
 maxlength="1">
-
 </td>
 
 <td>Last Name:</td>
-
 <td>
-
 <input type="text"
 id="lastName"
-oninput="validateLastName()"
-required>
-
+oninput="validateLastName()">
 <span class="error"
 id="lastNameError"></span>
-
 </td>
 
 </tr>
@@ -89,71 +75,63 @@ id="lastNameError"></span>
 <tr>
 
 <td>Date of Birth:</td>
-
 <td>
-
 <input type="date"
 id="dob"
 onblur="validateDOB()">
-
 <span class="error"
 id="dobError"></span>
-
 </td>
 
-<td>SSN:</td>
-
+<td>Social Security:</td>
 <td>
-
 <input type="password"
 id="ssn"
 maxlength="11"
 oninput="validateSSN()">
 
 <label>
-
 <input type="checkbox"
 onclick="toggleSSN()">
-
 Show SSN
-
 </label>
 
 <span class="error"
 id="ssnError"></span>
-
 </td>
 
 </tr>
 
 <tr>
 
-<td>Address:</td>
-
+<td>Address Line 1:</td>
 <td>
-
 <input type="text"
 id="address1">
-
 </td>
 
-<td>City:</td>
-
+<td>Address Line 2:</td>
 <td>
+<input type="text"
+id="address2">
+</td>
 
+</tr>
+
+<tr>
+
+<td>City:</td>
+<td>
 <input type="text"
 id="city">
-
 </td>
 
 <td>State:</td>
-
 <td>
 
 <select id="state">
 
 <option value="">Select</option>
-
 <option>TX</option>
 <option>CA</option>
 <option>NY</option>
@@ -164,36 +142,27 @@ id="city">
 
 </td>
 
+<td>Zip Code:</td>
+<td>
+<input type="text"
+id="zip"
+maxlength="5">
+</td>
+
 </tr>
 
 <tr>
 
-<td>ZIP:</td>
-
-<td>
-
-<input type="text"
-id="zip"
-maxlength="5">
-
-</td>
-
 <td>Email:</td>
-
 <td>
-
 <input type="text"
 id="email">
-
 </td>
 
 <td>User ID:</td>
-
 <td>
-
 <input type="text"
 id="userId">
-
 </td>
 
 </tr>
@@ -201,21 +170,15 @@ id="userId">
 <tr>
 
 <td>Password:</td>
-
 <td>
-
 <input type="password"
 id="password">
-
 </td>
 
-<td>Confirm Password:</td>
-
+<td>Re-enter Password:</td>
 <td>
-
 <input type="password"
 id="confirmPassword">
-
 </td>
 
 </tr>
@@ -266,10 +229,26 @@ name="vaccine">
 No
 </label>
 
+</td>
+
+</tr>
+
+<tr>
+
+<td>Insurance?</td>
+
+<td colspan="5">
+
 <label>
 <input type="radio"
-name="vaccine">
-Unsure
+name="insurance">
+Yes
+</label>
+
+<label>
+<input type="radio"
+name="insurance">
+No
 </label>
 
 </td>
@@ -302,13 +281,18 @@ COVID-19
 Tetanus
 </label>
 
+<label>
+<input type="checkbox">
+Smallpox
+</label>
+
 </td>
 
 </tr>
 
 <tr>
 
-<td>Symptoms:</td>
+<td>Describe Symptoms:</td>
 
 <td colspan="5">
 
@@ -320,7 +304,7 @@ Tetanus
 
 <tr>
 
-<td>Health Scale:</td>
+<td>Health Scale (1–10):</td>
 
 <td colspan="5">
 
@@ -344,16 +328,12 @@ align="center">
 
 <button type="button"
 onclick="reviewForm()">
-
 Review
-
 </button>
 
 <button type="button"
 onclick="validateForm()">
-
 Validate
-
 </button>
 
 <input type="reset"
