@@ -3,7 +3,7 @@ window.onload = function(){
     const today = new Date();
 
     document.getElementById("currentDate")
-    .innerHTML = today.toDateString();
+    .innerHTML = today.toLocaleDateString();
 }
 
 function updateSlider(){
