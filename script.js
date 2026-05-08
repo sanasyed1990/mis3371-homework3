@@ -3,7 +3,8 @@ window.onload = function(){
     const today = new Date();
 
     document.getElementById("currentDate")
-    .innerHTML = today.toLocaleDateString();
+    .innerHTML =
+    today.toLocaleDateString();
 }
 
 function updateSlider(){
@@ -40,14 +41,17 @@ function validateFirstName(){
     let regex = /^[A-Za-z'-]+$/;
 
     if(value === ""){
+
         error.innerHTML = "Required";
     }
 
     else if(!regex.test(value)){
+
         error.innerHTML = "Letters only";
     }
 
     else{
+
         error.innerHTML = "";
     }
 }
@@ -63,14 +67,17 @@ function validateLastName(){
     let regex = /^[A-Za-z'-]+$/;
 
     if(value === ""){
+
         error.innerHTML = "Required";
     }
 
     else if(!regex.test(value)){
+
         error.innerHTML = "Letters only";
     }
 
     else{
+
         error.innerHTML = "";
     }
 }
@@ -89,14 +96,19 @@ function validateDOB(){
     document.getElementById("dobError");
 
     if(dob > today){
-        error.innerHTML = "Future DOB invalid";
+
+        error.innerHTML =
+        "Future DOB invalid";
     }
 
     else if(age > 120){
-        error.innerHTML = "Invalid age";
+
+        error.innerHTML =
+        "Invalid age";
     }
 
     else{
+
         error.innerHTML = "";
     }
 }
@@ -111,11 +123,14 @@ function validateSSN(){
 
     ssn = ssn.replace(/\D/g,'');
 
-    if(ssn.length > 3 && ssn.length <=5)
+    if(ssn.length > 3 && ssn.length <= 5)
+
     ssn =
-    ssn.slice(0,3) + "-" + ssn.slice(3);
+    ssn.slice(0,3) + "-" +
+    ssn.slice(3);
 
     if(ssn.length > 5)
+
     ssn =
     ssn.slice(0,3) + "-" +
     ssn.slice(3,5) + "-" +
@@ -124,10 +139,83 @@ function validateSSN(){
     document.getElementById("ssn").value = ssn;
 
     if(ssn.length !== 11){
+
         error.innerHTML = "Invalid SSN";
     }
 
     else{
+
         error.innerHTML = "";
+    }
+}
+
+function reviewForm(){
+
+    let output =
+
+    "<p><strong>Name:</strong> " +
+
+    document.getElementById("firstName").value +
+
+    " " +
+
+    document.getElementById("lastName").value +
+
+    "</p>";
+
+    output +=
+
+    "<p><strong>Email:</strong> " +
+
+    document.getElementById("email").value +
+
+    "</p>";
+
+    output +=
+
+    "<p><strong>Symptoms:</strong> " +
+
+    document.getElementById("symptoms").value +
+
+    "</p>";
+
+    document.getElementById("reviewOutput")
+    .innerHTML = output;
+}
+
+function validateForm(){
+
+    validateFirstName();
+
+    validateLastName();
+
+    validateDOB();
+
+    validateSSN();
+
+    let errors =
+    document.getElementsByClassName("error");
+
+    let hasError = false;
+
+    for(let i = 0; i < errors.length; i++){
+
+        if(errors[i].innerHTML !== ""){
+
+            hasError = true;
+        }
+    }
+
+    if(!hasError){
+
+        document.getElementById("submitBtn")
+        .style.display = "inline-block";
+
+        alert("Validation Passed");
+    }
+
+    else{
+
+        alert("Fix errors first");
     }
 }
