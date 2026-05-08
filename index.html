@@ -5,9 +5,13 @@
 
 <meta charset="UTF-8">
 
-<title>FirstLine Health - Patient Registration</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+<title>FirstLine Health</title>
+
+<link rel="stylesheet"
+href="style.css">
 
 <script src="script.js" defer></script>
 
@@ -17,21 +21,17 @@
 
 <div id="header">
 
-<div class="header-left">
+    <img src="./logo.png"
+    alt="FLH Logo"
+    class="logo">
 
-<img src="./logo.png"
-alt="FLH Logo"
-class="logo">
+    <div class="header-center">
 
-</div>
+        <h1>FirstLine Health</h1>
 
-<div class="header-center">
+        <div id="currentDate"></div>
 
-<h1>FirstLine Health</h1>
-
-<div id="currentDate"></div>
-
-</div>
+    </div>
 
 </div>
 
@@ -39,7 +39,8 @@ class="logo">
 
 <h2>Patient Registration Form</h2>
 
-<form action="thankyou.html" id="patientForm">
+<form action="thankyou.html"
+id="patientForm">
 
 <table>
 
@@ -56,6 +57,16 @@ required>
 
 <span class="error"
 id="firstNameError"></span>
+
+</td>
+
+<td>Middle Initial:</td>
+
+<td>
+
+<input type="text"
+id="middleInitial"
+maxlength="1">
 
 </td>
 
@@ -122,11 +133,7 @@ id="ssnError"></span>
 <td>
 
 <input type="text"
-id="address1"
-oninput="validateAddress()">
-
-<span class="error"
-id="addressError"></span>
+id="address1">
 
 </td>
 
@@ -135,17 +142,9 @@ id="addressError"></span>
 <td>
 
 <input type="text"
-id="city"
-oninput="validateCity()">
-
-<span class="error"
-id="cityError"></span>
+id="city">
 
 </td>
-
-</tr>
-
-<tr>
 
 <td>State:</td>
 
@@ -154,6 +153,7 @@ id="cityError"></span>
 <select id="state">
 
 <option value="">Select</option>
+
 <option>TX</option>
 <option>CA</option>
 <option>NY</option>
@@ -164,34 +164,26 @@ id="cityError"></span>
 
 </td>
 
+</tr>
+
+<tr>
+
 <td>ZIP:</td>
 
 <td>
 
 <input type="text"
 id="zip"
-maxlength="5"
-oninput="validateZip()">
-
-<span class="error"
-id="zipError"></span>
+maxlength="5">
 
 </td>
-
-</tr>
-
-<tr>
 
 <td>Email:</td>
 
 <td>
 
 <input type="text"
-id="email"
-oninput="validateEmail()">
-
-<span class="error"
-id="emailError"></span>
+id="email">
 
 </td>
 
@@ -200,11 +192,7 @@ id="emailError"></span>
 <td>
 
 <input type="text"
-id="userId"
-oninput="validateUserID()">
-
-<span class="error"
-id="userIdError"></span>
+id="userId">
 
 </td>
 
@@ -217,11 +205,7 @@ id="userIdError"></span>
 <td>
 
 <input type="password"
-id="password"
-oninput="validatePasswordStrength()">
-
-<span class="error"
-id="passwordError"></span>
+id="password">
 
 </td>
 
@@ -230,11 +214,93 @@ id="passwordError"></span>
 <td>
 
 <input type="password"
-id="confirmPassword"
-oninput="validatePasswordMatch()">
+id="confirmPassword">
 
-<span class="error"
-id="confirmPasswordError"></span>
+</td>
+
+</tr>
+
+<tr>
+
+<td>Gender:</td>
+
+<td colspan="5">
+
+<label>
+<input type="radio"
+name="gender">
+Male
+</label>
+
+<label>
+<input type="radio"
+name="gender">
+Female
+</label>
+
+<label>
+<input type="radio"
+name="gender">
+Other
+</label>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Vaccinated?</td>
+
+<td colspan="5">
+
+<label>
+<input type="radio"
+name="vaccine">
+Yes
+</label>
+
+<label>
+<input type="radio"
+name="vaccine">
+No
+</label>
+
+<label>
+<input type="radio"
+name="vaccine">
+Unsure
+</label>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Medical History:</td>
+
+<td colspan="5">
+
+<label>
+<input type="checkbox">
+Chicken Pox
+</label>
+
+<label>
+<input type="checkbox">
+Measles
+</label>
+
+<label>
+<input type="checkbox">
+COVID-19
+</label>
+
+<label>
+<input type="checkbox">
+Tetanus
+</label>
 
 </td>
 
@@ -244,7 +310,7 @@ id="confirmPasswordError"></span>
 
 <td>Symptoms:</td>
 
-<td colspan="3">
+<td colspan="5">
 
 <textarea id="symptoms"></textarea>
 
@@ -256,7 +322,7 @@ id="confirmPasswordError"></span>
 
 <td>Health Scale:</td>
 
-<td colspan="3">
+<td colspan="5">
 
 <input type="range"
 id="salary"
@@ -273,7 +339,8 @@ oninput="updateSlider()">
 
 <tr>
 
-<td colspan="4" align="center">
+<td colspan="6"
+align="center">
 
 <button type="button"
 onclick="reviewForm()">
@@ -289,13 +356,13 @@ Validate
 
 </button>
 
+<input type="reset"
+value="Reset">
+
 <input type="submit"
 id="submitBtn"
 value="Submit"
 style="display:none;">
-
-<input type="reset"
-value="Reset">
 
 </td>
 
