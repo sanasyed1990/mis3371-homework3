@@ -1,163 +1,372 @@
-body {
+<!DOCTYPE html>
+<html lang="en">
 
-    font-family: Arial, sans-serif;
+<head>
 
-    background-color: #e6eceb;
+<meta charset="UTF-8">
 
-    margin: 0;
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    padding: 0;
-}
+<title>FirstLine Health</title>
 
-#header {
+<link rel="stylesheet"
+href="style.css">
 
-    background: #0a6b5e;
+<script src="script.js" defer></script>
 
-    color: white;
+</head>
 
-    padding: 20px;
+<body>
 
-    display: flex;
+<div id="header">
 
-    align-items: center;
+<img src="./logo.png"
+alt="FLH Logo"
+class="logo">
 
-    gap: 20px;
-}
+<div class="header-center">
 
-.logo {
+<h1>FirstLine Health</h1>
 
-    width: 120px;
+<div id="currentDate"></div>
 
-    height: auto;
-}
+</div>
 
-.header-center {
+</div>
 
-    text-align: left;
-}
+<div id="main">
 
-.header-center h1 {
+<h2>Patient Registration Form</h2>
 
-    margin: 0;
+<form action="thankyou.html"
+id="patientForm">
 
-    color: white;
-}
+<table>
 
-#currentDate {
+<tr>
 
-    margin-top: 5px;
+<td>First Name:</td>
+<td>
+<input type="text"
+id="firstName"
+oninput="validateFirstName()">
+<span class="error"
+id="firstNameError"></span>
+</td>
 
-    color: white;
-}
+<td>Middle Initial:</td>
+<td>
+<input type="text"
+maxlength="1">
+</td>
 
-#main {
+<td>Last Name:</td>
+<td>
+<input type="text"
+id="lastName"
+oninput="validateLastName()">
+<span class="error"
+id="lastNameError"></span>
+</td>
 
-    width: 85%;
+</tr>
 
-    max-width: 1000px;
+<tr>
 
-    margin: 20px auto;
+<td>Date of Birth:</td>
+<td>
+<input type="date"
+id="dob"
+onblur="validateDOB()">
+<span class="error"
+id="dobError"></span>
+</td>
 
-    background: white;
+<td>Social Security:</td>
+<td>
+<input type="password"
+id="ssn"
+maxlength="11"
+oninput="validateSSN()">
 
-    padding: 20px;
+<label>
+<input type="checkbox"
+onclick="toggleSSN()">
+Show SSN
+</label>
 
-    border-radius: 10px;
-}
+<span class="error"
+id="ssnError"></span>
+</td>
 
-h2 {
+</tr>
 
-    color: #0a6b5e;
-}
+<tr>
 
-table {
+<td>Address Line 1:</td>
+<td>
+<input type="text"
+id="address1">
+</td>
 
-    width: 100%;
-}
+<td>Address Line 2:</td>
+<td>
+<input type="text"
+id="address2">
+</td>
 
-td {
+</tr>
 
-    padding: 10px;
+<tr>
 
-    vertical-align: top;
+<td>City:</td>
+<td>
+<input type="text"
+id="city">
+</td>
 
-    color: black;
-}
+<td>State:</td>
+<td>
 
-label,
-p {
+<select id="state">
 
-    color: black;
-}
+<option value="">Select</option>
+<option>TX</option>
+<option>CA</option>
+<option>NY</option>
+<option>FL</option>
+<option>WA</option>
 
-input[type="text"],
-input[type="password"],
-input[type="date"],
-textarea,
-select {
+</select>
 
-    width: 180px;
+</td>
 
-    padding: 6px;
-}
+<td>Zip Code:</td>
+<td>
+<input type="text"
+id="zip"
+maxlength="5">
+</td>
 
-textarea {
+</tr>
 
-    width: 400px;
+<tr>
 
-    height: 80px;
-}
+<td>Email:</td>
+<td>
+<input type="text"
+id="email">
+</td>
 
-button,
-input[type="submit"],
-input[type="reset"] {
+<td>User ID:</td>
+<td>
+<input type="text"
+id="userId">
+</td>
 
-    background-color: #0a6b5e;
+</tr>
 
-    color: white;
+<tr>
 
-    border: none;
+<td>Password:</td>
+<td>
+<input type="password"
+id="password">
+</td>
 
-    padding: 8px 14px;
+<td>Re-enter Password:</td>
+<td>
+<input type="password"
+id="confirmPassword">
+</td>
 
-    margin: 5px;
+</tr>
 
-    cursor: pointer;
-}
+<tr>
 
-.error {
+<td>Gender:</td>
 
-    color: red;
+<td colspan="5">
 
-    font-size: 13px;
+<label>
+<input type="radio"
+name="gender">
+Male
+</label>
 
-    display: block;
+<label>
+<input type="radio"
+name="gender">
+Female
+</label>
 
-    margin-top: 4px;
-}
+<label>
+<input type="radio"
+name="gender">
+Other
+</label>
 
-#reviewSection {
+</td>
 
-    margin-top: 20px;
+</tr>
 
-    background: #f2f2f2;
+<tr>
 
-    padding: 15px;
+<td>Vaccinated?</td>
 
-    border-radius: 8px;
+<td colspan="5">
 
-    color: black;
-}
+<label>
+<input type="radio"
+name="vaccine">
+Yes
+</label>
 
-#footer {
+<label>
+<input type="radio"
+name="vaccine">
+No
+</label>
 
-    background: #0a6b5e;
+</td>
 
-    color: white;
+</tr>
 
-    text-align: center;
+<tr>
 
-    padding: 15px;
+<td>Insurance?</td>
 
-    margin-top: 20px;
-}
+<td colspan="5">
+
+<label>
+<input type="radio"
+name="insurance">
+Yes
+</label>
+
+<label>
+<input type="radio"
+name="insurance">
+No
+</label>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Medical History:</td>
+
+<td colspan="5">
+
+<label>
+<input type="checkbox">
+Chicken Pox
+</label>
+
+<label>
+<input type="checkbox">
+Measles
+</label>
+
+<label>
+<input type="checkbox">
+COVID-19
+</label>
+
+<label>
+<input type="checkbox">
+Tetanus
+</label>
+
+<label>
+<input type="checkbox">
+Smallpox
+</label>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Describe Symptoms:</td>
+
+<td colspan="5">
+
+<textarea id="symptoms"></textarea>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Health Scale (1–10):</td>
+
+<td colspan="5">
+
+<input type="range"
+id="salary"
+min="1"
+max="10"
+value="5"
+oninput="updateSlider()">
+
+<span id="salaryValue">5</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan="6"
+align="center">
+
+<button type="button"
+onclick="reviewForm()">
+Review
+</button>
+
+<button type="button"
+onclick="validateForm()">
+Validate
+</button>
+
+<input type="reset"
+value="Reset">
+
+<input type="submit"
+id="submitBtn"
+value="Submit"
+style="display:none;">
+
+</td>
+
+</tr>
+
+</table>
+
+</form>
+
+<div id="reviewSection">
+
+<h2>PLEASE REVIEW THIS INFORMATION</h2>
+
+<div id="reviewOutput"></div>
+
+</div>
+
+</div>
+
+<div id="footer">
+
+FirstLine Health | Houston, TX
+
+</div>
+
+</body>
+</html>
