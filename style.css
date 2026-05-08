@@ -1,52 +1,79 @@
 body {
+
     font-family: Arial, sans-serif;
-    background-color: #0a6b5e;
+
+    background-color: #e6eceb;
+
     margin: 0;
+
     padding: 0;
-    color: white;
 }
 
 #header {
+
     background: #0a6b5e;
+
     color: white;
-    padding: 15px;
+
+    padding: 20px;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
 
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.logo {
+
+    width: 120px;
+
+    height: auto;
+}
+
+.header-center {
+
+    text-align: center;
 }
 
 #main {
+
     width: 85%;
+
     max-width: 1000px;
 
     margin: 20px auto;
 
-    background-color: #dcdcdc;
+    background-color: #f2f2f2;
 
     padding: 20px;
 
     border-radius: 10px;
-
-    color: white;
 }
 
-h1,
-h2 {
+h1 {
+
     color: white;
+
+    margin: 0;
+}
+
+h2 {
+
+    color: #0a6b5e;
 }
 
 table {
+
     width: 100%;
 }
 
 td {
+
     padding: 10px;
+
     vertical-align: top;
 }
 
@@ -55,12 +82,16 @@ input[type="password"],
 input[type="date"],
 textarea,
 select {
+
     width: 180px;
+
     padding: 6px;
 }
 
 textarea {
+
     width: 400px;
+
     height: 80px;
 }
 
@@ -99,13 +130,17 @@ input[type="reset"]:hover {
     margin-top: 4px;
 }
 
-iframe {
-
-    border: none;
+#reviewSection {
 
     margin-top: 20px;
 
-    border-radius: 10px;
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    color: black;
 }
 
 #footer {
