@@ -44,7 +44,8 @@ class="logo">
 <h2>Patient Registration Form</h2>
 
 <form action="thankyou.html"
-id="patientForm">
+id="patientForm"
+onsubmit="return false;">
 
 <table>
 
@@ -343,10 +344,14 @@ Validate
 <input type="reset"
 value="Reset">
 
-<input type="submit"
+<button type="button"
 id="submitBtn"
-value="Submit"
-style="display:none;">
+style="display:none;"
+onclick="goToThankYou()">
+
+Submit
+
+</button>
 
 </td>
 
