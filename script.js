@@ -367,3 +367,8 @@ function validateForm(){
         alert("Fix errors first");
     }
 }
+function goToThankYou(){
+
+    window.location.href =
+    "thankyou.html";
+}
