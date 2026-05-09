@@ -169,7 +169,11 @@ id="city">
 <td>
 <input type="text"
 id="zip"
-maxlength="5">
+maxlength="5"
+oninput="validateZip()">
+
+<span class="error"
+id="zipError"></span>
 </td>
 
 </tr>
@@ -180,14 +184,22 @@ maxlength="5">
 
 <td>
 <input type="text"
-id="email">
+id="email"
+oninput="validateEmail()">
+
+<span class="error"
+id="emailError"></span>
 </td>
 
 <td>User ID:</td>
 
 <td>
 <input type="text"
-id="userId">
+id="userId"
+oninput="validateUserID()">
+
+<span class="error"
+id="userIdError"></span>
 </td>
 
 </tr>
@@ -198,14 +210,22 @@ id="userId">
 
 <td>
 <input type="password"
-id="password">
+id="password"
+oninput="validatePasswordStrength()">
+
+<span class="error"
+id="passwordError"></span>
 </td>
 
 <td>Re-enter Password:</td>
 
 <td>
 <input type="password"
-id="confirmPassword">
+id="confirmPassword"
+oninput="validatePasswordMatch()">
+
+<span class="error"
+id="confirmPasswordError"></span>
 </td>
 
 </tr>
