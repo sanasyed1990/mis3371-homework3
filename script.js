@@ -123,7 +123,7 @@ function validateSSN(){
 
     ssn = ssn.replace(/\D/g,'');
 
-    if(ssn.length > 3 && ssn.length <= 5)
+    if(ssn.length > 3 && ssn.length <=5)
 
     ssn =
     ssn.slice(0,3) + "-" +
@@ -136,11 +136,141 @@ function validateSSN(){
     ssn.slice(3,5) + "-" +
     ssn.slice(5,9);
 
-    document.getElementById("ssn").value = ssn;
+    document.getElementById("ssn").value =
+    ssn;
 
     if(ssn.length !== 11){
 
-        error.innerHTML = "Invalid SSN";
+        error.innerHTML =
+        "Invalid SSN";
+    }
+
+    else{
+
+        error.innerHTML = "";
+    }
+}
+
+function validateEmail(){
+
+    let email =
+    document.getElementById("email").value;
+
+    let error =
+    document.getElementById("emailError");
+
+    let regex =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    email = email.toLowerCase();
+
+    document.getElementById("email").value =
+    email;
+
+    if(!regex.test(email)){
+
+        error.innerHTML =
+        "Invalid email format";
+    }
+
+    else{
+
+        error.innerHTML = "";
+    }
+}
+
+function validateUserID(){
+
+    let user =
+    document.getElementById("userId").value;
+
+    let error =
+    document.getElementById("userIdError");
+
+    let regex =
+    /^[A-Za-z_][A-Za-z0-9_-]{4,19}$/;
+
+    if(!regex.test(user)){
+
+        error.innerHTML =
+        "Invalid User ID";
+    }
+
+    else{
+
+        error.innerHTML = "";
+    }
+}
+
+function validatePasswordStrength(){
+
+    let password =
+    document.getElementById("password").value;
+
+    let user =
+    document.getElementById("userId").value;
+
+    let error =
+    document.getElementById("passwordError");
+
+    let regex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+    if(password === user){
+
+        error.innerHTML =
+        "Password cannot equal User ID";
+    }
+
+    else if(!regex.test(password)){
+
+        error.innerHTML =
+        "Need uppercase lowercase and number";
+    }
+
+    else{
+
+        error.innerHTML = "";
+    }
+}
+
+function validatePasswordMatch(){
+
+    let p =
+    document.getElementById("password").value;
+
+    let c =
+    document.getElementById("confirmPassword").value;
+
+    let error =
+    document.getElementById("confirmPasswordError");
+
+    if(p !== c){
+
+        error.innerHTML =
+        "Passwords do not match";
+    }
+
+    else{
+
+        error.innerHTML = "";
+    }
+}
+
+function validateZip(){
+
+    let zip =
+    document.getElementById("zip").value;
+
+    let error =
+    document.getElementById("zipError");
+
+    let regex = /^\d{5}$/;
+
+    if(!regex.test(zip)){
+
+        error.innerHTML =
+        "ZIP must be 5 digits";
     }
 
     else{
@@ -173,6 +303,14 @@ function reviewForm(){
 
     output +=
 
+    "<p><strong>User ID:</strong> " +
+
+    document.getElementById("userId").value +
+
+    "</p>";
+
+    output +=
+
     "<p><strong>Symptoms:</strong> " +
 
     document.getElementById("symptoms").value +
@@ -192,6 +330,16 @@ function validateForm(){
     validateDOB();
 
     validateSSN();
+
+    validateEmail();
+
+    validateUserID();
+
+    validatePasswordStrength();
+
+    validatePasswordMatch();
+
+    validateZip();
 
     let errors =
     document.getElementsByClassName("error");
